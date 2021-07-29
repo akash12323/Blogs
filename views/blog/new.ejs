@@ -1,0 +1,60 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+
+
+
+<div class="container mt-5" style="width: 80vw; border: 0px;">
+    
+    <form class="validated-form" action="/blog" method="POST" style="max-width:70%;margin:10px auto" novalidate>
+        <div class="mb-3">
+            <label for="price" class="form-label">Category</label>
+            <input type="text" class="form-control" id="price" placeholder="Enter the category" name="blog[category]" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a category.
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Title</label>
+          <input type="text" class="form-control" id="name" placeholder="Product Name" name="blog[title]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a title.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="img" class="form-label">Image URL</label>
+          <input type="text" class="form-control" id="img" placeholder="Image URL" name="blog[img]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a image.
+          </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control" id="desc" cols="30" rows="5" name="blog[desc]" required></textarea>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a description.
+            </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+
+
+
+
+
+<%- include('../partials/footer') %> 

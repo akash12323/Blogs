@@ -1,0 +1,63 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+
+
+
+
+
+<div class="container" style="margin-top: 3rem; width: 80vw;">
+    
+    <form class="validated-form" action="/user/<%= currentUser._id %>/blog/<%=blog._id%>?_method=PATCH" method="POST" style="max-width:70%;margin:10px auto" novalidate>
+        <div class="mb-3">
+            <label for="price" class="form-label">Category</label>
+            <input type="text" class="form-control" id="price" placeholder="Enter the category" name="blog[category]" value="<%= blog.category %> " required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a price.
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Title</label>
+          <input type="text" class="form-control" value="<%= blog.title %>" id="name" placeholder="Product Name" name="blog[title]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a title.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="img" class="form-label">Image URL</label>
+          <input type="text" class="form-control" value="<%= blog.img %>" id="img" placeholder="Image URL" name="blog[img]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a image.
+          </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control" id="desc" cols="30" rows="5" name="blog[desc]" required><%= blog.desc %></textarea>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a description.
+            </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+
+</div>
+
+
+
+
+
+
+<%- include('../partials/footer') %> 

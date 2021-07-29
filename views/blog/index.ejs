@@ -1,0 +1,32 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+
+<div class="container mb-4" style="border: 0;">
+    <%- include('../partials/flash') %> 
+</div>
+
+<div style="width: 85vw; margin: 1rem auto;">
+    <div class="row m-3">
+        <%for(let blog of blogs){%>
+            <div class="col-lg-4 col-md-6 mt-5">
+                <div class="card p-2" style="position: relative;">
+                    <img src="<%= blog.img %>" class="card-img-top" alt="..." style="height: 250px;">
+                    <% if(currentUser){ %> 
+                        <form action="/user/<%= currentUser._id %>/favourites/<%= blog._id %>" method="POST">
+                            <button><i class="far fa-star" style="position: absolute; top:5%; left:85%; font-size: 30px; color: white; "></i></button>
+                        </form>
+                    <% } %> 
+                    <h5 class="lead display-6"><%= blog.title.substring(0,15) %> </h5>
+                    <p><%= blog.desc.substring(0,180) %> ...</p>
+                    <a href="/blog/<%= blog._id %>" class="btn btn-outline-primary">Continue Reading</a>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+</div>
+
+
+
+
+
+<%- include('../partials/footer') %> 
